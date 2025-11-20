@@ -2,6 +2,16 @@
 
 A production-style proof‑of‑concept demonstrating **LLM‑powered ticket triage**, workflow orchestration with **n8n**, and a clean **FastAPI + HTML/JS frontend**. Built to showcase real‑world automation architecture for employers evaluating AI engineering capability.
 
+Why This Project
+
+This repo is designed as a realistic, production-style example for employers evaluating AI workflow engineering skills. It demonstrates:
+
+End-to-end architecture (frontend → API → LLM → workflow engine)
+
+Structured JSON outputs from an LLM (ticket summary, category, priority, review flag)
+
+Integration with an orchestration tool (n8n webhook → FastAPI) suitable for real-world automation.
+
 ---
 
 ## 🌐 Overview
@@ -58,6 +68,14 @@ llm-workflow-automation-engine/
 └── README.md
 ```
 
+Reliability & Validation
+
+All LLM responses are coerced into a structured schema (see schema.py).
+
+The workflow engine validates that required fields are present before returning a response.
+
+Errors are surfaced as HTTP 4xx/5xx with JSON error bodies for easy monitoring and integration.
+
 ---
 
 ## 🔧 Setup
@@ -67,7 +85,12 @@ git clone <your_repo>
 
 ### 2. Create venv
 python -m venv .venv  
-.\.venv\Scripts ctivate
+# Windows
+.venv\Scripts\activate
+
+# macOS/Linux
+source .venv/bin/activate
+
 
 ### 3. Install deps
 pip install -r requirements.txt
