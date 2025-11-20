@@ -1,0 +1,73 @@
+{
+  "name": "Ticket Intake → LLM Engine",
+  "nodes": [
+    {
+      "id": "Webhook",
+      "name": "Incoming Ticket Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [300, 300],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ticket-intake-llm",
+        "responseMode": "onReceived",
+        "options": {
+          "responseContentType": "application/json"
+        }
+      }
+    },
+    {
+      "id": "HTTP Request",
+      "name": "Call LLM Ticket Engine",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [600, 300],
+      "parameters": {
+        "url": "http://127.0.0.1:8000/ticket-intake",
+        "method": "POST",
+        "authentication": "none",
+        "responseFormat": "json",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "={\n  \"message\": $json[\"message\"],\n  \"customer_name\": $json[\"customer_name\"],\n  \"email\": $json[\"email\"]\n}"
+      }
+    },
+    {
+      "id": "Respond",
+      "name": "Return Structured JSON",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [900, 300],
+      "parameters": {
+        "responseBody": "={{$json}}",
+        "options": {
+          "responseContentType": "application/json"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Incoming Ticket Webhook": {
+      "main": [
+        [
+          {
+            "node": "Call LLM Ticket Engine",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call LLM Ticket Engine": {
+      "main": [
+        [
+          {
+            "node": "Return Structured JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

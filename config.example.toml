@@ -1,0 +1,20 @@
+[llm]
+provider = "openai"
+model = "gpt-4.1-mini"
+temperature = 0.1
+max_tokens = 800
+
+[llm.retry]
+max_attempts = 3
+backoff_seconds = 2
+
+[logging]
+log_to_csv = true
+csv_path = "data/logs/workflow_runs.csv"
+log_prompt_and_response = false
+
+[workflow]
+workflow_type = "ticket_intake"
+
+[schema]
+output_schema = "TicketWorkflowOutput_v1"

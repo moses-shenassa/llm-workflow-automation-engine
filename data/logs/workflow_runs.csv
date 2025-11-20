@@ -1,0 +1,32 @@
+timestamp,workflow_type,status,error_message,input_message,summary,priority,category,needs_human_review
+2025-11-19T23:52:20.360470,ticket_intake,error,"Failed to produce valid JSON after 3 attempts: 1 validation error for TicketWorkflowOutput
+original_text
+  Field required [type=missing, input_value={'summary': ""Customer rep...ds_human_review': True}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing","Hi, my billing is wrong for last month and I think you double charged me.",,low,other,True
+2025-11-19T23:57:41.109341,ticket_intake,success,,"Hi, my billing is wrong for last month and I think you double charged me.",Customer reports a possible double charge on last month's billing.,high,billing,True
+2025-11-20T00:03:48.671237,ticket_intake,success,,"Hi, my billing is wrong for last month and I think you double charged me.",Customer reports a possible double charge on last month's billing.,high,billing,True
+2025-11-20T00:38:51.858226,ticket_intake,error,The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable,Test direct,,low,other,True
+2025-11-20T00:39:30.071409,ticket_intake,error,The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable,Test direct,,low,other,True
+2025-11-20T00:39:46.464573,ticket_intake,error,The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable,Test direct,,low,other,True
+2025-11-20T00:40:57.271894,ticket_intake,error,The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable,Test direct,,low,other,True
+2025-11-20T00:43:33.008335,ticket_intake,success,,Test direct,User submitted a test message.,low,other,False
+2025-11-20T00:57:15.307714,ticket_intake,success,,Hi my billing is wrong,Customer reports an issue with incorrect billing.,high,billing,True
+2025-11-20T00:57:41.503198,ticket_intake,success,,Hi my billing is wrong,Customer reports an issue with incorrect billing.,high,billing,True
+2025-11-20T02:26:19.926326,ticket_intake,success,,Hi my billing is wrong,Customer reports an issue with incorrect billing.,high,billing,True
+2025-11-20T02:33:04.012217,ticket_intake,success,,Hi my billing is wrong,Customer reports an issue with incorrect billing.,high,billing,True
+2025-11-20T02:38:28.793427,ticket_intake,success,,Hi my billing is wrong,Customer reports an issue with incorrect billing.,high,billing,True
+2025-11-20T02:42:35.529358,ticket_intake,success,,"Hi, my billing is wrong for last month and I think you double charged me.",Customer reports a possible double charge on last month's billing.,high,billing,True
+2025-11-20T03:01:22.183184,ticket_intake,success,,Single test through production URL,Request to perform a single test through the production URL,low,technical,False
+2025-11-20T03:08:55.024461,ticket_intake,success,,"Hi, my billing is wrong for last month and I think you double charged me.",Customer reports a possible double charge on last month's billing.,high,billing,True
+2025-11-20T03:08:57.301328,ticket_intake,success,,I can't log in to my account. It says my password is wrong even after resetting it.,Customer is unable to log in due to password issues despite resetting it.,high,account,True
+2025-11-20T03:09:00.345704,ticket_intake,success,,Your site is completely down for us right now. None of our team can access the dashboard.,The customer's site is completely down and their team cannot access the dashboard.,urgent,technical,True
+2025-11-20T03:09:06.002046,ticket_intake,success,,Please cancel my subscription at the end of this billing period and confirm there will be no further charges.,Customer requests cancellation of subscription at the end of the current billing period and confirmation of no further charges.,medium,billing,False
+2025-11-20T03:09:08.604602,ticket_intake,success,,My card was charged even though I already cancelled last month. I want a refund immediately.,Customer reports being charged after cancellation and requests an immediate refund.,urgent,billing,True
+2025-11-20T03:09:10.496200,ticket_intake,success,,The export-to-CSV feature keeps timing out and throwing an error. It worked fine last week.,"The export-to-CSV feature is timing out and throwing an error, despite working fine last week.",medium,technical,True
+2025-11-20T03:09:12.253163,ticket_intake,success,,"I'm really happy with the service overall, but the mobile app is slow and crashes when I try to open reports.",Customer reports that the mobile app is slow and crashes when opening reports.,medium,technical,False
+2025-11-20T03:09:13.988298,ticket_intake,success,,"If this overcharge isn't fixed today, I will dispute the transaction with my bank and leave a formal complaint.",Customer reports an overcharge and demands it be fixed today to avoid disputing the transaction and filing a complaint.,urgent,billing,True
+2025-11-20T03:09:15.837694,ticket_intake,success,,We need a way to add multiple teammates to one invoice. Is there a feature for account-wide billing or a way to request it?,Request for a feature to add multiple teammates to one invoice or account-wide billing.,medium,billing,True
+2025-11-20T03:09:17.839795,ticket_intake,success,,Someone else seems to be accessing my account from another country. I see logins I don't recognize.,Customer reports unauthorized access to their account from another country with unrecognized logins.,urgent,account,True
+2025-11-20T03:09:20.236991,ticket_intake,success,,Your support has been ignoring my messages. This is unacceptable. I've been waiting two weeks for a response.,Customer is frustrated due to lack of response for two weeks.,high,other,True
+2025-11-20T03:09:22.596616,ticket_intake,success,,Our organization is evaluating your product for a long-term contract. Can you provide more details about your security and compliance?,Customer is requesting more information about security and compliance for evaluation purposes.,medium,other,False
+2025-11-20T03:18:52.480785,ticket_intake,success,,Can't access your site. I want to cancel my subscription.,Customer cannot access the site and wants to cancel their subscription.,high,account,True
